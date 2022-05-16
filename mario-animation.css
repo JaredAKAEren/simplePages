@@ -1,4 +1,4 @@
-body {
+/* body {
     background-color: lightblue;
     text-align: center;
 }
@@ -11,8 +11,8 @@ body {
 
 img {
     /* transform: translate(200px); */
-    /* transform: scaleX(2); */
-    /* transform: rotateX(60deg); */
+/* transform: scaleX(2); */
+/* transform: rotateX(60deg);
 }
 
 .circle {
@@ -30,4 +30,122 @@ img {
 .circle:hover {
     background-color: brown;
     transform: rotate(360deg);
+} */
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+.grass,
+.sky,
+.road {
+    position: relative;
+}
+
+.sky {
+    height: 40%;
+    background-color: skyblue;
+}
+
+.grass {
+    height: 30%;
+    background-color: seagreen;
+}
+
+.road {
+    height: 30%;
+    background-color: dimgray;
+    box-sizing: border-box;
+    border-top: 10px solid gray;
+    border-bottom: 10px solid gray;
+}
+
+.lines {
+    position: absolute;
+    box-sizing: border-box;
+    top: 50%;
+    border-top: 10px dashed white;
+    height: 0px;
+    width: 100%;
+}
+
+.mario {
+    position: absolute;
+    top: -30px;
+    left: 0px;
+    /* animation-name: drive;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; */
+    animation:
+        drive 3s both infinite linear,
+        jump 0.4s 1s ease-in;
+}
+
+.luigi {
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    animation-name: drive;
+    animation-duration: 5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    /* animation-direction: reverse; */
+}
+
+.cloud {
+    position: absolute;
+}
+
+.cloud:nth-child(1) {
+    width: 200px;
+    top: 120px;
+    opacity: 0.5;
+    animation: wind 80s linear infinite reverse;
+}
+
+.cloud:nth-child(2) {
+    width: 300px;
+    top: 0;
+    animation: wind 60s linear infinite reverse;
+}
+
+@keyframes drive {
+    from {
+        transform: translateX(-200px);
+    }
+
+    to {
+        transform: translateX(1200px);
+    }
+}
+
+@keyframes wind {
+    from {
+        transform: translateX(-300px);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes jump {
+    0% {
+        top: -30px
+    }
+
+    50% {
+        top: -100px;
+    }
+
+    100% {
+        top: -30px;
+    }
 }
