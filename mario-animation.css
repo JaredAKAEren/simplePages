@@ -1,0 +1,33 @@
+body {
+    background-color: lightblue;
+    text-align: center;
+}
+
+.cloud {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+img {
+    /* transform: translate(200px); */
+    /* transform: scaleX(2); */
+    /* transform: rotateX(60deg); */
+}
+
+.circle {
+    background-color: darksalmon;
+    color: white;
+    width: 100px;
+    line-height: 0;
+    padding: 50px 0;
+    margin: 50 auto;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 1s linear;
+}
+
+.circle:hover {
+    background-color: brown;
+    transform: rotate(360deg);
+}
